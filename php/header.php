@@ -1,1 +1,0 @@
-<nav>Barre de navigation</nav>
