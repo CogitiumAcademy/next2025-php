@@ -1,16 +1,8 @@
 <?php
 include("config/pdo.inc.php");
-
 // var_dump($pdo);
 
-/*********** Requete SQL pour récupérer tous les posts actifs **************/
-$sql =  'SELECT title, LEFT(content, 150) AS content, lastName, firstName, updatedAt  
-            FROM posts A
-            INNER JOIN users B
-                ON A.id_users = B.id
-            WHERE active = 1';
-$cursor = $pdo->query($sql);
-$data = $cursor->fetchAll();
+include("models/posts.sql.php");
 //var_dump($data);
 
 include("templates/index.php");
