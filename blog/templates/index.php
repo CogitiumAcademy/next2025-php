@@ -22,8 +22,9 @@
 
                         <!-- Post preview-->
                         <div class="post-preview">
-                            <a href="post.html">
+                            <a href="post.php?slug=<?= $post['slug']; ?>">
                                 <h2 class="post-title"><?= $post['title']; ?></h2>
+                                <img src="<?= $post['image']; ?>" width="300" alt="">
                                 <h3 class="post-subtitle"><?= $post['content']; ?>...</h3>
                             </a>
                             <p class="post-meta">
