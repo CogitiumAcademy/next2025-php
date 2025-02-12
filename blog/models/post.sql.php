@@ -1,7 +1,7 @@
 <?php
 /*********** Requete SQL pour récupérer le post correspondant au slug de l'url **************/
 try {
-    $sql =  'SELECT title, content, image, lastName, firstName, updatedAt  
+    $sql =  'SELECT A.id, title, content, image, lastName, firstName, updatedAt  
                 FROM posts A
                 INNER JOIN users B
                     ON A.id_users = B.id

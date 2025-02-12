@@ -43,6 +43,15 @@
                             </ul>
                         <?php } ?>
 
+                        <?php if (isset($_SESSION['user'])) { ?>
+                            <h2>Saisir un commentaire</h2>
+                            <form action="post.php?slug=<?= $_GET['slug']; ?>" method="post">
+                                <textarea class="form-control" name="content" id="comment"></textarea>
+                                <input type="hidden" name="idPost" value="<?= $data['id']; ?>">
+                                <button class="btn btn-primary text-uppercase" type="submit">Enregistrer</button>
+                            </form>
+                        <?php } ?>
+
                     </div>
                 </div>
             </div>

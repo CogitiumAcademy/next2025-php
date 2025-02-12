@@ -1,8 +1,15 @@
 <?php
-include("config/pdo.inc.php");
-// var_dump($pdo);
-
+include("config/bootstrap.inc.php");
 include("lib/pluralize.php");
+
+if (isset($_POST['content'])) {
+    //die("commentaire !");
+    //die(date('Y-m-d H:i:s'));
+    $content = $_POST['content'];
+    $idPost = $_POST['idPost'];
+    $idUser = $_SESSION['user']['id'];
+    include("models/addComment.sql.php");
+}
 
 if (!isset($_GET["slug"])) {
     die("Manque slug !");

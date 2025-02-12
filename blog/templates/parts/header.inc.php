@@ -32,6 +32,11 @@
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.php">Sample Post</a></li>
                         -->
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.php">Contact</a></li>
+                        <?php if (!isset($_SESSION['user'])) { ?>
+                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="login.php">Login</a></li>
+                        <?php } else { ?>
+                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="logout.php">Logout</a></li>
+                        <?php } ?>
                     </ul>
                 </div>
             </div>
