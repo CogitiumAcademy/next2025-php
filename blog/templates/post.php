@@ -32,15 +32,17 @@
                             <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>
                         </p>
                         -->
-                        <h2><?= pluralize('Le', $nbComments) ?> <?= ($nbComments==1)?'':$nbComments; ?> <?= pluralize('commentaire',$nbComments) ?> :</h2>
-                        <?php foreach ($comments as $comment) { ?>
-                            <ul>
-                                <li>
-                                    Le <?= $comment['createdAt']; ?> 
-                                    <?= $comment['firstName']; ?> <?= $comment['lastName']; ?> a écrit :<br>
-                                    <?= $comment['content']; ?>
-                                </li>
-                            </ul>
+                        <?php if ($nbComments > 0) { ?>
+                            <h2><?= pluralize('Le', $nbComments) ?> <?= ($nbComments==1)?'':$nbComments; ?> <?= pluralize('commentaire',$nbComments) ?> :</h2>
+                            <?php foreach ($comments as $comment) { ?>
+                                <ul>
+                                    <li>
+                                        Le <?= $comment['createdAt']; ?> 
+                                        <?= $comment['firstName']; ?> <?= $comment['lastName']; ?> a écrit :<br>
+                                        <?= $comment['content']; ?>
+                                    </li>
+                                </ul>
+                            <?php } ?>
                         <?php } ?>
 
                         <?php if (isset($_SESSION['user'])) { ?>

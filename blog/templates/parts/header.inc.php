@@ -35,6 +35,9 @@
                         <?php if (!isset($_SESSION['user'])) { ?>
                             <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="login.php">Login</a></li>
                         <?php } else { ?>
+                            <?php if ($_SESSION['user']['role'] == 'ROLE_MODER') { ?>
+                                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="moder.php">Modération</a></li>
+                                <?php } ?>
                             <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="logout.php">Logout</a></li>
                         <?php } ?>
                     </ul>
