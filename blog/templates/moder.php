@@ -26,7 +26,7 @@
                                 <?= $comment['content']; ?><br>
                                 Ecrit par : <?= $comment['firstName'] . ' ' .  $comment['lastName']; ?><br>
                                 Le : <?= $comment['createdAt']; ?><br>
-                                <a href="delComment.php?id=<?= $comment['id']; ?>"><i class="fa-solid fa-trash"></i></a>
+                                <a onclick="return confirm('Etes-vous certain ?')" href="delComment.php?id=<?= $comment['id']; ?>"><i class="fa-solid fa-trash"></i></a>
                             </p>
                         </div>
                         <!-- Divider-->
