@@ -1,11 +1,12 @@
 <?php
 include("config/bootstrap.inc.php");
-//var_dump($_SESSION);
+
+include("models/login.sql.php");
 
 if (isset($_POST['email'])) {
-    $email = $_POST['email'];
+    //$email = $_POST['email'];
     $plainPassword = $_POST['password'];
-    include("models/login.sql.php");
+    $user = login_sql($_POST['email']);
     //var_dump($user);
     //var_dump(md5($plainPassword));
     if (!$user) {

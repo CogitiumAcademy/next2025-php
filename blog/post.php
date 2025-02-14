@@ -2,24 +2,28 @@
 include("config/bootstrap.inc.php");
 include("lib/pluralize.php");
 
+include("models/addComment.sql.php");
+include("models/post.sql.php");
+include("models/commentsForPost.sql.php");
+
 if (isset($_POST['content'])) {
     //die("commentaire !");
     //die(date('Y-m-d H:i:s'));
-    $content = $_POST['content'];
-    $idPost = $_POST['idPost'];
-    $idUser = $_SESSION['user']['id'];
-    include("models/addComment.sql.php");
+    //$content = $_POST['content'];
+    //$idPost = $_POST['idPost'];
+    //$idUser = $_SESSION['user']['id'];
+    addComment_sql($_POST['content'], $_SESSION['user']['id'], $_POST['idPost']);
 }
 
 if (!isset($_GET["slug"])) {
     die("Manque slug !");
 }
-$slug = $_GET["slug"];
+//$slug = $_GET["slug"];
 
-include("models/post.sql.php");
+$data = post_sql($_GET["slug"]);
 //var_dump($data); exit;
 
-include("models/commentsForPost.sql.php");
+$comments = commentsForPost_sql($_GET["slug"]);
 $nbComments = count($comments);
 //var_dump($comments); exit;
 

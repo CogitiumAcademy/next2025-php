@@ -40,3 +40,6 @@
         <script src="public/js/scripts.js"></script>
     </body>
 </html>
+<?php
+var_dump($_SESSION);
+?>

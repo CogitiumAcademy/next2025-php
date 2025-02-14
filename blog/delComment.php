@@ -1,6 +1,7 @@
 <?php
 include("config/bootstrap.inc.php");
-//var_dump($_SESSION);
+
+include("models/delComment.sql.php");
 
 if (!isset($_SESSION['user'])) {
     header("Location: login.php");
@@ -15,9 +16,9 @@ if (!isset($_GET['id'])) {
     die("Paramètre manquant !");
 }
 
-$id = $_GET['id'];
+//$id = $_GET['id'];
 
-include("models/delComment.sql.php");
+delComment_sql($_GET['id']);
 
 header("Location: moder.php");
 exit;
