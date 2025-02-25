@@ -1,0 +1,19 @@
+{
+    "name": "cogit/mvc",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "App\\Services\\": "src/services"
+        }
+    },
+    "authors": [
+        {
+            "name": "PhG",
+            "email": "info@cogitium.com"
+        }
+    ],
+    "require": {
+        "symfony/http-foundation": "^7.2"
+    }
+}
