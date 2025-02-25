@@ -1,0 +1,22 @@
+{
+    "name": "phgiraud/1-init",
+    "description": "Test de composer",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "App\\Services\\": ["src/services", "src/modules"],
+            "": "fallback//"
+        }
+    },
+    "authors": [
+        {
+            "name": "PhG",
+            "email": "info@cogitium.com"
+        }
+    ],
+    "require": {
+        "cocur/slugify": "^4.6",
+        "ausi/slug-generator": "^1.1"
+    }
+}
