@@ -8,6 +8,8 @@ require 'vendor/autoload.php';
 // Le require sera fait par l'autoloading
 use App\classes\Member;
 //use Cocur\Slugify\Slugify;
+use Cocur\Slugify\Slugify;
+use NumberToWords\NumberToWords;
 use Ausi\SlugGenerator\SlugGenerator;
 
 // Instanciation
@@ -66,5 +68,17 @@ dump($member);
         }
         ?>
     </ul>
+
+    <h2>Test de number-to-words</h2>
+    <?php
+    // create the number to words "manager" class
+    $numberToWords = new NumberToWords();
+
+    // build a new number transformer using the RFC 3066 language identifier
+    $numberTransformer = $numberToWords->getNumberTransformer('en');
+    echo $numberTransformer->toWords(5120, 'USD'); // outputs "five thousand one hundred twenty"
+    echo "<br>";
+    echo NumberToWords::transformCurrency('en', 5099, 'USD'); // outputs "fifty dollars ninety nine cents"
+    ?>
 </body>
 </html>
