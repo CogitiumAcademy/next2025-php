@@ -7,11 +7,13 @@ require 'vendor/autoload.php';
 // Lien vers la classe utilisée
 // Le require sera fait par l'autoloading
 use App\classes\Member;
-use Cocur\Slugify\Slugify;
+//use Cocur\Slugify\Slugify;
 use Ausi\SlugGenerator\SlugGenerator;
 
 // Instanciation
 $member = new Member("John", "Doe");
+var_dump($member);
+dump($member);
 ?>
 
 <!DOCTYPE html>
@@ -50,6 +52,19 @@ $member = new Member("John", "Doe");
     <?php
         $generator = new SlugGenerator;
         echo $generator->generate('Hello Wörld!');  // Output: hello-world
+        echo "<br>";
+        echo $generator->generate('富士山');         // Output: fu-shi-shan
     ?>
+
+    <h2>Test de Faker</h2>
+    <ul>
+        <?php
+        // use the factory to create a Faker\Generator instance
+        $faker = Faker\Factory::create();
+        for ($i = 0; $i < 10; $i++) {
+            echo '<li>' . $faker->name() . ' : ' . $faker->email() . ' / ' . $faker->phoneNumber() . '</li>';
+        }
+        ?>
+    </ul>
 </body>
 </html>
