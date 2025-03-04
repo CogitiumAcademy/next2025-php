@@ -11,7 +11,11 @@ $request = Request::createFromGlobals();
 //var_dump($request);
 
 $loader = new \Twig\Loader\FilesystemLoader('./templates');
-$twig = new \Twig\Environment($loader);
+$twig = new \Twig\Environment($loader, [
+    'debug' => true,
+    // ...
+]);
+$twig->addExtension(new \Twig\Extension\DebugExtension());
 
 $controller = !empty($request->get('controller')) ? ucfirst($request->get('controller')) . 'Controller' : 'DefaultController';
 

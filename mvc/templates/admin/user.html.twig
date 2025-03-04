@@ -3,8 +3,13 @@
 {% block title %}Gestion des users{% endblock %}
 
 {% block content %}
+    {# {{ dump(users) }} #}
     <h1>GESTION USERS TWIG</h1>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consequuntur doloremque earum fugit magni
-        minima molestias, optio perspiciatis suscipit tempore! Architecto, dolores, rerum. Distinctio ducimus iure nobis
-        saepe sequi veritatis?
+        {% for user in users %}
+            <div>
+                {{ user.firstname }}
+                {{ user.lastname }}
+                {{ user.email }}
+            </div>
+        {% endfor %}
 {% endblock %}
