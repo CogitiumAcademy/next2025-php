@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <ul>
+        <li><a href="?controller=default&action=home">Home</a></li>
+        <li><a href="?controller=default&action=contact">Contact</a></li>
+        <li><a href="?controller=user&action=register">Register</a></li>
+        <li><a href="?controller=user&action=login">Login</a></li>
+        <li><a href="?controller=user&action=logout">Logout</a></li>
+        <li><a href="?controller=admin&action=dashboard">Admin dashboard</a></li>
+        <li><a href="?controller=admin&action=user">Admin users</a></li>
+    </ul>
+{% block content %}{% endblock %}
+</body>
+</html>
