@@ -1,5 +1,6 @@
 <?php
 
+use App\Repository\PostRepository;
 use App\Controller\AbstractController;
 //use Symfony\Component\HttpFoundation\Response;
 
@@ -9,7 +10,9 @@ class DefaultController extends AbstractController
     {
         //echo 'Home';
         //return new Response('Page home');
-        return $this->render('default/home.html.twig');
+        $postRepository = new PostRepository();
+        $posts = $postRepository->findAll();
+        return $this->render('default/home.html.twig', ['posts' => $posts]);
     }
 
     public function contact()
