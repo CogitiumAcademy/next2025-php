@@ -1,0 +1,57 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Gestion des commandes{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Gestion des commandes</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Commandes</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+                Fichier Commandes
+            </div>
+            <div class="card-body">
+                <table id="datatablesSimple">
+                    <thead>
+                        <tr>
+                            <th>N° Cde</th>
+                            <th>Client</th>
+                            <th>Date Cde</th>
+                            <th>Date prévue</th>
+                            <th>Date d'expédition</th>
+                            <th>Total Cde</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>N° Cde</th>
+                            <th>Client</th>
+                            <th>Date Cde</th>
+                            <th>Date prévue</th>
+                            <th>Date d'expédition</th>
+                            <th>Total Cde</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        {% for order in orders %}
+                        <tr>
+                            <td>{{ order.orderNumber }}</td>
+                            <td>{{ order.customerName }}</td>
+                            <td>{{ order.orderDate }}</td>
+                            <td>{{ order.requiredDate }}</td>
+                            <td>{{ order.shippedDate }}</td>
+                            <td>{{ order.total }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

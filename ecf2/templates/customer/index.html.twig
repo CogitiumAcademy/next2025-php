@@ -1,0 +1,54 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Gestion des clients{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Gestion des clients</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Clients</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+                Fichier Clients
+            </div>
+            <div class="card-body">
+                <table id="datatablesSimple">
+                    <thead>
+                        <tr>
+                            <th>Nom du client</th>
+                            <th>Nom du contact</th>
+                            <th>Prénom du contact</th>
+                            <th>Mail</th>
+                            <th>Commercial</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Nom du client</th>
+                            <th>Nom du contact</th>
+                            <th>Prénom du contact</th>
+                            <th>Mail</th>
+                            <th>Commercial</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        {% for customer in customers %}
+                        <tr>
+                            <td><a href="?controller=customer&action=one&id={{ customer.customerNumber }}">{{ customer.customerName }}</a></td>
+                            <td>{{ customer.contactLastName }}</td>
+                            <td>{{ customer.contactFirstName }}</td>
+                            <td>{{ customer.city }}</td>
+                            <td>{{ customer.firstName ~ ' ' ~ customer.lastName }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
