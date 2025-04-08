@@ -10,7 +10,9 @@ class DefaultController extends AbstractController
         $dashboardRepository = new DashboardRepository();
         $countAll = $dashboardRepository->countAll();
         //dd($countAll);
-        return $this->render('default/index.html.twig', ['countAll' => $countAll[0]]);
+        return $this->render('default/index.html.twig', [
+            'countAll' => $countAll
+        ]);
     }
 
 }

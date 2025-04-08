@@ -22,7 +22,6 @@ class CustomerRepository extends AbstractRepository
         } catch (PDOException $e) {
             die("Erreur : " . $e->getMessage());
         }
-        return $data;
     }
 
     public function findById($id): array
@@ -41,6 +40,5 @@ class CustomerRepository extends AbstractRepository
         } catch (PDOException $e) {
             die("Erreur : " . $e->getMessage());
         }
-        return $data;
     }
 }

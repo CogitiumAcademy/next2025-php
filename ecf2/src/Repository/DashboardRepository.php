@@ -15,11 +15,10 @@ class DashboardRepository extends AbstractRepository
                     (SELECT COUNT(*) FROM products) AS CountProducts,
                     (SELECT COUNT(*) FROM orders) AS CountOrders;';
             $cursor = $this->pdo->query($sql);
-            $data = $cursor->fetchAll();
+            $data = $cursor->fetch();
             return $data;
         } catch (PDOException $e) {
             die("Erreur : " . $e->getMessage());
         }
-        return $data;
     }
 }
