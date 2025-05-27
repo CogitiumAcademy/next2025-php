@@ -1,6 +1,7 @@
 RewriteEngine On
 
-RewriteBase /
+# RewriteBase /formation/next2025/next2025-php/ecf2/
+# RewriteRule . - [E=REWRITEBASE:/formation/next2025/next2025-php/ecf2]
 
 
 # Exclusions
